@@ -5,6 +5,11 @@
     "require": {
         "hhvm": "~3.2",
         "WordPress/WordPress": "*",
+        "wpackagist-plugin/recent-facebook-posts": "~2",
+        "wpackagist-plugin/sermon-manager-for-wordpress": "~1",
+        "wpackagist-plugin/contact-form-7": "~4",
+        "wpackagist-plugin/redirection": "~2",
+        "wpackagist-plugin/simplemap": "~2",
         "wpackagist-plugin/jetpack": "~3",
         "wpackagist-plugin/wpro": "~1",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
@@ -24,7 +29,7 @@
         },
         {
             "type":"composer",
-            "url":"http://wpackagist.org"
+            "url":"https://wpackagist.org"
         }
     ],
     "extra": {

@@ -1,0 +1,480 @@
+/*-----------------------------------------------------------------------------
+
+	-	revolution slider -
+
+Screen Stylesheet
+
+author:		themepunch
+email:     	info@themepunch.com
+website:   	http://www.themepunch.com
+-----------------------------------------------------------------------------*/
+
+
+/******************************
+	-	WRAPPER STYLES		-
+******************************/
+
+.rev_slider_wrapper{
+	position:relative;
+}
+
+.rev_slider{
+	position:relative;
+	overflow:hidden;
+}
+
+
+
+.rev_slider img{
+	max-width:none !important;
+}
+
+
+.rev_slider .no-slides-text{
+	font-weight:bold;
+	text-align:center;
+	padding-top:80px;
+}
+
+.rev_slider ul{
+	margin:0px;
+	padding:0px;
+	list-style: none;
+}
+
+.rev_slider >ul >li{
+	list-stye:none;
+	position:absolute;
+	visibility:hidden;
+	margin:0px;
+	padding:0px;
+	overflow-x: visible;
+	overflow-y: visible;
+}
+
+.rev_slider .caption {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";	-moz-opacity: 0;	-khtml-opacity: 0;	opacity: 0; 	position:absolute; visibility: hidden;
+
+}
+
+/******************************
+	-	WRAPPER STYLES END	-
+******************************/
+
+/******************************
+	-	IE8 HACKS	-
+*******************************/
+.noFilterClass {
+	filter:none !important;
+}
+/******************************
+	-	IE8 HACKS ENDS	-
+*******************************/
+
+/********************************
+	-	FULLSCREEN VIDEO	-
+*********************************/
+.caption.fullscreenvideo {	left:0px; top:0px; position:absolute;width:100%;height:100%;}
+.caption.fullscreenvideo iframe	{ width:100% !important; height:100% !important;}
+/********************************
+	-	FULLSCREEN VIDEO ENDS	-
+*********************************/
+
+.fullwidthbanner-container{
+
+}
+
+.fullwidthbanner-container .fullwidthabanner{
+
+}
+
+
+.tp-simpleresponsive .caption {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";		-moz-opacity: 0;	-khtml-opacity: 0;	opacity: 0; position:absolute;
+}
+
+
+/******************************
+	-	SHADOWS		-
+******************************/
+.tp-bannershadow  {
+		position:absolute;
+
+		margin-left:auto;
+		margin-right:auto;
+		-moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+	}
+
+.tp-bannershadow.tp-shadow1 {}
+.tp-bannershadow.tp-shadow2 {}
+.tp-bannershadow.tp-shadow3 {}
+
+
+/******************************
+	-	BUTTONS	-
+*******************************/
+
+.tp-button{
+    float: left;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:bold;
+    padding: 16px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+		}
+
+.tp-button.big{}
+
+
+.purchase:hover,
+.tp-button:hover,
+.tp-button.big:hover	{}
+
+
+
+/*	BUTTON COLORS	*/
+
+.tp-button.white
+{
+    color: #222222!important;
+    border:1px solid #c2c2c2;
+    background-color: #e9e9e9;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9e9e9), color-stop(100%, #d8d8d8));
+    background-image: -webkit-linear-gradient(top, #e9e9e9, #d8d8d8);
+    background-image: -moz-linear-gradient(top, #e9e9e9, #d8d8d8);
+    background-image: -ms-linear-gradient(top, #e9e9e9, #d8d8d8);
+    background-image: -o-linear-gradient(top, #e9e9e9, #d8d8d8);
+}
+.tp-button:hover.white
+{
+    background-color: #cbcbcb;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cbcbcb), color-stop(100%, #dcdcdc));
+    background-image: -webkit-linear-gradient(top, #cbcbcb, #dcdcdc);
+    background-image: -moz-linear-gradient(top, #cbcbcb, #dcdcdc);
+    background-image: -ms-linear-gradient(top, #cbcbcb, #dcdcdc);
+    background-image: -o-linear-gradient(top, #cbcbcb, #dcdcdc);
+
+}
+
+.tp-button.black
+{
+    color: #ffffff!important;
+    border:1px solid #424242;
+    background-color: #515151;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #515151), color-stop(100%, #363636));
+    background-image: -webkit-linear-gradient(top, #515151, #363636);
+    background-image: -moz-linear-gradient(top, #515151, #363636);
+    background-image: -ms-linear-gradient(top, #515151, #363636);
+    background-image: -o-linear-gradient(top, #515151, #363636);
+}
+.tp-button:hover.black
+{
+    background-color: #232323;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#232323), color-stop(100%, #3e3e3e));
+    background-image: -webkit-linear-gradient(top, #232323, #3e3e3e);
+    background-image: -moz-linear-gradient(top, #232323, #3e3e3e);
+    background-image: -ms-linear-gradient(top, #232323, #3e3e3e);
+    background-image: -o-linear-gradient(top, #232323, #3e3e3e);
+}
+
+.tp-button.grey
+{
+    color: #474646!important;
+    text-shadow: 0 1px 0 #B6B6B6!important;
+    border:1px solid #9c9c9c;
+    background-color: #c8c8c8;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c8c8c8), color-stop(100%, #9d9d9d));
+    background-image: -webkit-linear-gradient(top, #c8c8c8, #9d9d9d);
+    background-image: -moz-linear-gradient(top, #c8c8c8, #9d9d9d);
+    background-image: -ms-linear-gradient(top, #c8c8c8, #9d9d9d);
+    background-image: -o-linear-gradient(top, #c8c8c8, #9d9d9d);
+}
+.tp-button:hover.grey
+{
+    background-color: #7e7e7e;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7e7e7e), color-stop(100%, #a9a9a9));
+    background-image: -webkit-linear-gradient(top, #7e7e7e, #a9a9a9);
+    background-image: -moz-linear-gradient(top, #7e7e7e, #a9a9a9);
+    background-image: -ms-linear-gradient(top, #7e7e7e, #a9a9a9);
+    background-image: -o-linear-gradient(top, #7e7e7e, #a9a9a9);
+}
+
+.tp-button.red
+{
+    border:1px solid #c24925!important;
+    text-shadow: 0 1px 0 #dd8b70!important;
+    background-color: #f3713b;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3713b), color-stop(100%, #ea4b27));
+    background-image: -webkit-linear-gradient(top, #f3713b, #ea4b27);
+    background-image: -moz-linear-gradient(top, #f3713b, #ea4b27);
+    background-image: -ms-linear-gradient(top, #f3713b, #ea4b27);
+    background-image: -o-linear-gradient(top, #f3713b, #ea4b27);
+    color: #772711!important;
+}
+.tp-button:hover.red
+{
+    background-color: #e63c1f;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e63c1f), color-stop(100%, #f16736));
+    background-image: -webkit-linear-gradient(top, #e63c1f, #f16736);
+    background-image: -moz-linear-gradient(top, #e63c1f, #f16736);
+    background-image: -ms-linear-gradient(top, #e63c1f, #f16736);
+    background-image: -o-linear-gradient(top, #e63c1f, #f16736);
+}
+
+.tp-button.green
+{
+    border:1px solid #2d9e3a!important;
+    text-shadow: 0 1px 0 #5cd769!important;
+    background-color: #46d558;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #46d558), color-stop(100%, #2eae39));
+    background-image: -webkit-linear-gradient(top, #46d558, #2eae39);
+    background-image: -moz-linear-gradient(top, #46d558, #2eae39);
+    background-image: -ms-linear-gradient(top, #46d558, #2eae39);
+    background-image: -o-linear-gradient(top, #46d558, #2eae39);
+    color: #1a5620!important;
+}
+.tp-button:hover.green
+{
+    background-color: #1fa727;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1fa727), color-stop(100%, #38c445));
+    background-image: -webkit-linear-gradient(top, #1fa727, #38c445);
+    background-image: -moz-linear-gradient(top, #1fa727, #38c445);
+    background-image: -ms-linear-gradient(top, #1fa727, #38c445);
+    background-image: -o-linear-gradient(top, #1fa727, #38c445);
+}
+
+.tp-button.yellow
+{
+    border:1px solid #b9aa24!important;
+    text-shadow: 0 1px 0 #eae186!important;
+    background-color: #efe038;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efe038), color-stop(100%, #e2c825));
+    background-image: -webkit-linear-gradient(top, #efe038, #e2c825);
+    background-image: -moz-linear-gradient(top, #efe038, #e2c825);
+    background-image: -ms-linear-gradient(top, #efe038, #e2c825);
+    background-image: -o-linear-gradient(top, #efe038, #e2c825);
+    color: #645912!important;
+}
+.tp-button:hover.yellow
+{
+    background-color: #d9b818;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d9b818), color-stop(100%, #e6d02b));
+    background-image: -webkit-linear-gradient(top, #d9b818, #e6d02b);
+    background-image: -moz-linear-gradient(top, #d9b818, #e6d02b);
+    background-image: -ms-linear-gradient(top, #d9b818, #e6d02b);
+    background-image: -o-linear-gradient(top, #d9b818, #e6d02b);
+}
+
+.tp-button.blue
+{
+    border:1px solid #276c9a!important;
+    text-shadow: 0 1px 0 #3e98c7!important;
+    background-color: #42a9d2;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #42a9d2), color-stop(100%, #2c71af));
+    background-image: -webkit-linear-gradient(top, #42a9d2, #2c71af);
+    background-image: -moz-linear-gradient(top, #42a9d2, #2c71af);
+    background-image: -ms-linear-gradient(top, #42a9d2, #2c71af);
+    background-image: -o-linear-gradient(top, #42a9d2, #2c71af);
+    color: #1a4256!important;
+}
+.tp-button:hover.blue
+{
+    background-color: #2d73b0;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2d73b0), color-stop(100%, #42a9d2));
+    background-image: -webkit-linear-gradient(top, #2d73b0, #42a9d2);
+    background-image: -moz-linear-gradient(top, #2d73b0, #42a9d2);
+    background-image: -ms-linear-gradient(top, #2d73b0, #42a9d2);
+    background-image: -o-linear-gradient(top, #2d73b0, #42a9d2);
+
+}
+
+.tp-button.brown
+{
+    border:1px solid #6c5435!important;
+    text-shadow: 0 1px 0 #b68d58!important;
+    background-color: #c1a465;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c1a465), color-stop(100%, #916d43));
+    background-image: -webkit-linear-gradient(top, #c1a465, #916d43);
+    background-image: -moz-linear-gradient(top, #c1a465, #916d43);
+    background-image: -ms-linear-gradient(top, #c1a465, #916d43);
+    background-image: -o-linear-gradient(top, #c1a465, #916d43);
+    color: #56442a!important;
+}
+.tp-button:hover.brown
+{
+    background-color: #a48977;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#916d43), color-stop(100%, #c1a465));
+    background-image: -webkit-linear-gradient(top, #916d43, #c1a465);
+    background-image: -moz-linear-gradient(top, #916d43, #c1a465);
+    background-image: -ms-linear-gradient(top, #916d43, #c1a465);
+    background-image: -o-linear-gradient(top, #916d43, #c1a465);
+}
+
+
+
+
+
+
+/************************
+	-	NAVIGATION	-
+*************************/
+
+/** BULLETS **/
+.tp-bullets									{	z-index:100; position:absolute; bottom:10px; }
+.tp-bullets.simplebullets					{ 	bottom:90px !important;}
+
+
+.tp-bullets.simplebullets.navbar				{ bottom:-20px; background:url(../assets/navigdots_bgtile.png); height:35px; padding:0px 0px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px ;margin-top:-17px;}
+
+.tp-bullets.simplebullets .bullet			{	cursor:pointer; position:relative;	background:url(../assets/bullets.png) no-Repeat bottom left;	width:23px;	height:23px;  margin-right:0px !important; float:left; margin-top:-12px !important;}
+.tp-bullets.simplebullets .bullet.last		{	margin-right:0px;}
+
+/**	SQUARE BULLETS **/
+.tp-bullets.simplebullets.square .bullet			{	cursor:pointer; position:relative;	background:url(../assets/bullets2.png) no-Repeat bottom left;	width:19px;	height:19px;  margin-right:0px; float:left; margin-top:-10px;}
+.tp-bullets.simplebullets.square .bullet.last		{	margin-right:0px;}
+
+/** navbar NAVIGATION VERSION **/
+.tp-bullets.simplebullets.navbar .bullet		{	cursor:pointer; position:relative;	background:url(../assets/navigdots.png) no-Repeat bottom left;	width:15px;	height:15px;  margin-left:5px !important; margin-right:5px !important;float:left; margin-top:10px;}
+.tp-bullets.simplebullets.navbar .bullet.first		{	margin-left:30px !important;}
+.tp-bullets.simplebullets.navbar .bullet.last		{	margin-right:30px !important;}
+
+.tp-bullets.simplebullets .bullet:hover,
+.tp-bullets.simplebullets .bullet.selected	{	background-position:top left; }
+
+
+
+
+/*************************************
+	-	TP ARROWS 	-
+**************************************/
+
+
+.tp-leftarrow						{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_left.png) no-Repeat top left;	width:26px;	height:26px;  margin-right:0px; float:left; margin-top:-13px;	}
+.tp-rightarrow						{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right.png) no-Repeat top left;	width:26px;	height:26px;  margin-right:0px; float:left;	margin-top:-13px;}
+
+.tp-leftarrow.navbar				{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrowleft.png) no-Repeat top left;		width:9px;	height:16px;   float:left;	margin-right:-20px; margin-top:-8px;}
+.tp-rightarrow.navbar				{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrowright.png) no-Repeat top left;	width:9px;	height:16px;   float:left;	margin-left:-20px; margin-top:-8px;}
+.tp-leftarrow.navbar.thumbswitharrow	{	margin-right:10px; }
+.tp-rightarrow.navbar.thumbswitharrow	{	margin-left:0px; }
+
+.tp-leftarrow.square				{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_left2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-right:0px; margin-top:-9px;}
+.tp-rightarrow.square				{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-left:0px; margin-top:-9px;}
+
+.tp-leftarrow.large					{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_large_left.png) no-Repeat top left;	width:46px;	height:46px;  margin-left:20px; margin-top:-23px; }
+.tp-rightarrow.large				{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_large_right.png) no-Repeat top left;	width:46px;	height:46px;  margin-left:-20px; margin-top:-23px; }
+
+.tp-leftarrow:hover,
+.tp-rightarrow:hover {	background-position:bottom left; }
+
+
+
+
+
+
+/****************************************************************************************************
+	-	TP THUMBS 	-
+*****************************************************************************************************
+
+ - tp-thumbs & tp-mask Width is the width of the basic Thumb Container (500px basic settings)
+
+ - .bullet width & height is the dimension of a simple Thumbnail (basic 100px x 50px)
+
+ *****************************************************************************************************/
+
+
+.tp-bullets.tp-thumbs						{	z-index:100; position:absolute; padding:0px 2px 2px;background-color:#fff;
+												width:500px;height:50px; 			/* THE DIMENSIONS OF THE THUMB CONTAINER */
+											}
+
+.fullwidthbanner-container .tp-thumbs					{  padding:2px;}
+
+.tp-bullets.tp-thumbs .tp-mask				{	width:500px; height:50px;  			/* THE DIMENSIONS OF THE THUMB CONTAINER */
+												overflow:hidden; position:relative;}
+
+
+.tp-bullets.tp-thumbs .tp-mask .tp-thumbcontainer	{	width:5000px; position:absolute;}
+
+.tp-bullets.tp-thumbs .bullet				{   width:100px; height:50px; 			/* THE DIMENSION OF A SINGLE THUMB */
+												cursor:pointer; overflow:hidden;background:none;margin:0;float:left;
+												-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";		-moz-opacity: 0.5;	-khtml-opacity: 0.5;	opacity: 0.5;
+												-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out;
+											}
+.tp-bullets.tp-thumbs .bullet:hover,
+.tp-bullets.tp-thumbs .bullet.selected		{ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";		-moz-opacity: 1;	-khtml-opacity: 1;	opacity: 1;}
+.tp-thumbs img								{	width:100%; }
+
+
+/************************************
+		-	TP BANNER TIMER		-
+*************************************/
+.tp-bannertimer								{	width:100%; height:10px; background:url(../assets/timer.png);position:absolute; z-index:200;}
+.tp-bannertimer.tp-bottom					{	bottom:0px !important;height:5px;}
+
+
+
+
+/***************************************
+	-	RESPONSIVE SETTINGS 	-
+****************************************/
+
+
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+			.responsive .tp-bullets.tp-thumbs				{	width:300px !important; height:30px !important;}
+			.responsive .tp-bullets.tp-thumbs .tp-mask		{	width:300px !important; height:30px !important;}
+			.responsive .tp-bullets.tp-thumbs .bullet		{	width:60px !important;height:30px !important;}
+
+	}
+
+    @media only screen and (min-width: 0px) and (max-width: 479px) {
+				.responsive .tp-bullets	{	display:none}
+				.responsive .tparrows	{	display:none;}
+	}
+
+
+/*********************************************
+
+	-	BASIC SETTINGS FOR THE BANNER	-
+
+***********************************************/
+
+ .tp-simpleresponsive img {
+		-moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+}
+
+
+.tp-simpleresponsive ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+.tp-simpleresponsive >ul li{
+	list-stye:none;
+	position:absolute;
+	visibility:hidden;
+}
+
+/*  CAPTION SLIDELINK   **/
+.caption.slidelink a div {}
+
+.tp-loader 	{	background:url(../assets/loader.gif) no-repeat 10px 10px; background-color:#fff;  margin:-22px -22px; top:50%; left:50%; z-index:10000; position:absolute;width:44px;height:44px;
+				border-radius: 3px;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+			}
+
