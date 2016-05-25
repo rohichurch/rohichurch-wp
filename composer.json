@@ -10,7 +10,7 @@
         "wpackagist-plugin/contact-form-7": "~4",
         "wpackagist-plugin/redirection": "~2",
         "wpackagist-plugin/simplemap": "~2",
-        "wpackagist-plugin/jetpack": "~3",
+        "wpackagist-plugin/jetpack": "~4",
         "wpackagist-plugin/wpro": "~1",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
         "wpackagist-plugin/authy-two-factor-authentication": "~2"
@@ -20,10 +20,10 @@
             "type": "package",
             "package": {
                 "name": "WordPress/WordPress",
-                "version": "4.1.2",
+                "version": "4.5.1",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.1.2.zip"
+                    "url": "https://github.com/WordPress/WordPress/archive/4.5.1.zip"
                 }
             }
         },

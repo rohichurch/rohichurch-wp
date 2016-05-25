@@ -45,13 +45,13 @@ With the [Heroku gem](http://devcenter.heroku.com/articles/heroku-command), crea
 
 Add a database to your app
 
-    $ heroku addons:add cleardb:ignite
+    $ heroku addons:create cleardb:ignite
     > Adding cleardb:ignite on strange-turtle-1234... done, v2 (free)
     > Use `heroku addons:docs cleardb:ignite` to view documentation.
 
 Add memcache to your app
 
-    $ heroku addons:add memcachier:dev
+    $ heroku addons:create memcachier:dev
     > Adding memcachier:dev on strange-turtle-1234... done, v3 (free)
     > MemCachier: added.  Your credentials may take up to 3 minutes to sync to our servers.
     > Use `heroku addons:docs memcachier:dev` to view documentation.
@@ -59,14 +59,14 @@ Add memcache to your app
 Add unique keys and salts to your Heroku config
 
     $ heroku config:set\
-        WP_AUTH_KEY=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`\
-        WP_SECURE_AUTH_KEY=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`\
-        WP_LOGGED_IN_KEY=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`\
-        WP_NONCE_KEY=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`\
-        WP_AUTH_SALT=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`\
-        WP_SECURE_AUTH_SALT=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`\
-        WP_LOGGED_IN_SALT=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`\
-        WP_NONCE_SALT=`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`
+        WP_AUTH_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
+        WP_SECURE_AUTH_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
+        WP_LOGGED_IN_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
+        WP_NONCE_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
+        WP_AUTH_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
+        WP_SECURE_AUTH_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
+        WP_LOGGED_IN_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
+        WP_NONCE_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"
     > Setting config vars and restarting strange-turtle-1234... done, v4
     > WP_AUTH_KEY:         ...
     > WP_AUTH_SALT:        ...
@@ -186,7 +186,7 @@ By default WordPress will connect to the database unencrypted which is a potenti
 
 Add SendGrid to your app
 
-    $ heroku addons:add sendgrid:starter
+    $ heroku addons:create sendgrid:starter
     > Adding sendgrid:starter on strange-turtle-1234... done, v11 (free)
     > Use `heroku addons:docs sendgrid:starter` to view documentation.
 
@@ -237,7 +237,7 @@ Running Locally
 
 A Vagrant instance to run Heroku WP is included. To get up and running:
 * Install vagrant http://www.vagrantup.com/downloads
-* Install vitrual box https://www.virtualbox.org/wiki/Downloads 
+* Install virtual box https://www.virtualbox.org/wiki/Downloads 
 * Install virtual box extension pack https://www.virtualbox.org/wiki/Downloads 
 * `cd` into app root directory and run `$ vagrant up` (should start setting up virtual env. go grab some ☕, takes about 10 minutes)
 
@@ -250,7 +250,7 @@ Connecting to MySQL on Vagrant Machine
 
 In order to connect you will need to change the MySQL config to work with 0.0.0.0 IP address instead of localhost.
 * SSH into the vm `$ vagrant ssh`
-* Open the config file `$ vim /etc/mysql/my.cnf`
+* Open the config file `$ sudo vim /etc/mysql/my.cnf`
 * Change the IP address from 127.0.0.1 to 0.0.0.0
 
 Then you can connect using SSH with the following paramaters:
