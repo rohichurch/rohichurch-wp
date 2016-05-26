@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "31138359606d3227d026b7e080714aed",
-    "content-hash": "2a6f635595b0682ad563db3587fe59fe",
+    "hash": "2a55524af7d94c30c76630a35c69f5c8",
+    "content-hash": "b2133db37736bfb002a0394de9028f97",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -157,6 +157,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
+        },
+        {
+            "name": "wpackagist-plugin/googleanalytics",
+            "version": "1.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/googleanalytics/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/googleanalytics.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/googleanalytics/"
         },
         {
             "name": "wpackagist-plugin/jetpack",
