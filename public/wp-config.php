@@ -1,4 +1,10 @@
 <?php
+require_once 'rollbar.php';
+Rollbar::init(array(
+    // required
+    'access_token' => 'e6a6dc6bff064be085be00dd5411d617',
+));
+
 /**
  * The base configurations of the WordPress.
  *

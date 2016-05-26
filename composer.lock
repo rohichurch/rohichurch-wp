@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a55524af7d94c30c76630a35c69f5c8",
-    "content-hash": "b2133db37736bfb002a0394de9028f97",
+    "hash": "804cf7e88837b0ea868b904849e35ab9",
+    "content-hash": "13517605e57f2a83f58af1c47ed3472f",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -139,6 +139,26 @@
             "homepage": "https://wordpress.org/plugins/authy-two-factor-authentication/"
         },
         {
+            "name": "wpackagist-plugin/cloudflare-cache-purge",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cloudflare-cache-purge/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cloudflare-cache-purge.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cloudflare-cache-purge/"
+        },
+        {
             "name": "wpackagist-plugin/contact-form-7",
             "version": "4.4.2",
             "source": {
@@ -180,15 +200,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/4.0.2"
+                "reference": "tags/4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.4.0.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.4.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -297,6 +317,46 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simplemap/"
+        },
+        {
+            "name": "wpackagist-plugin/vaultpress",
+            "version": "1.8.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/vaultpress/",
+                "reference": "tags/1.8.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/vaultpress.1.8.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/vaultpress/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "3.2.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/3.2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         },
         {
             "name": "wpackagist-plugin/wpro",

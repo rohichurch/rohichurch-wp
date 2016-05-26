@@ -14,7 +14,10 @@
         "wpackagist-plugin/jetpack": "~4",
         "wpackagist-plugin/wpro": "~1",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
-        "wpackagist-plugin/authy-two-factor-authentication": "~2"
+        "wpackagist-plugin/authy-two-factor-authentication": "~2",
+        "wpackagist-plugin/cloudflare-cache-purge": "~1",
+        "wpackagist-plugin/wordpress-seo": "~3",
+        "wpackagist-plugin/vaultpress": "~1"
     },
     "repositories": [
         {
