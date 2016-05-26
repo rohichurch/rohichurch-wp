@@ -9,6 +9,7 @@
         "wpackagist-plugin/sermon-manager-for-wordpress": "~1",
         "wpackagist-plugin/contact-form-7": "~4",
         "wpackagist-plugin/redirection": "~2",
+        "wpackagist-plugin/googleanalytics": "~1",
         "wpackagist-plugin/simplemap": "~2",
         "wpackagist-plugin/jetpack": "~4",
         "wpackagist-plugin/wpro": "~1",
