@@ -6,7 +6,7 @@
         "hhvm": "~3.2",
         "WordPress/WordPress": "*",
         "wpackagist-plugin/recent-facebook-posts": "~2",
-        "wpackagist-plugin/sermon-manager-for-wordpress": "~1",
+        "wpackagist-plugin/sermon-manager-for-wordpress": "~2",
         "wpackagist-plugin/contact-form-7": "~4",
         "wpackagist-plugin/redirection": "~2",
         "wpackagist-plugin/googleanalytics": "~1",
@@ -14,8 +14,6 @@
         "wpackagist-plugin/jetpack": "~4",
         "wpackagist-plugin/wpro": "~1",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
-        "wpackagist-plugin/authy-two-factor-authentication": "~2",
-        "wpackagist-plugin/cloudflare-cache-purge": "~1",
         "wpackagist-plugin/wordpress-seo": "~3",
         "wpackagist-plugin/vaultpress": "~1"
     },
@@ -24,10 +22,10 @@
             "type": "package",
             "package": {
                 "name": "WordPress/WordPress",
-                "version": "4.5.1",
+                "version": "4.8",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.5.1.zip"
+                    "url": "https://github.com/WordPress/WordPress/archive/4.8.zip"
                 }
             }
         },

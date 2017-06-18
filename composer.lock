@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "804cf7e88837b0ea868b904849e35ab9",
-    "content-hash": "13517605e57f2a83f58af1c47ed3472f",
+    "hash": "0f2cab2950936cec2f3e790b605d1297",
+    "content-hash": "522850da541710ea8ca4a5686815b13b",
     "packages": [
         {
             "name": "WordPress/WordPress",
-            "version": "4.5.1",
+            "version": "4.8",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.5.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -20,16 +20,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.0.25",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e"
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
                 "shasum": ""
             },
             "require": {
@@ -71,32 +71,43 @@
             "keywords": [
                 "Craft",
                 "Dolibarr",
+                "Eliasis",
                 "Hurad",
                 "ImageCMS",
+                "Kanboard",
                 "MODX Evo",
                 "Mautic",
+                "Maya",
                 "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
                 "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
                 "aimeos",
                 "annotatecms",
+                "attogram",
                 "bitrix",
                 "cakephp",
                 "chef",
+                "cockpit",
                 "codeigniter",
                 "concrete5",
                 "croogo",
                 "dokuwiki",
                 "drupal",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
+                "itop",
                 "joomla",
                 "kohana",
                 "laravel",
+                "lavalite",
                 "lithium",
                 "magento",
                 "mako",
@@ -107,68 +118,31 @@
                 "piwik",
                 "ppi",
                 "puppet",
+                "reindex",
                 "roundcube",
                 "shopware",
                 "silverstripe",
+                "sydes",
                 "symfony",
                 "typo3",
                 "wordpress",
+                "yawik",
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-13 19:46:30"
-        },
-        {
-            "name": "wpackagist-plugin/authy-two-factor-authentication",
-            "version": "2.5.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/authy-two-factor-authentication/",
-                "reference": "tags/2.5.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/authy-two-factor-authentication.2.5.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/authy-two-factor-authentication/"
-        },
-        {
-            "name": "wpackagist-plugin/cloudflare-cache-purge",
-            "version": "1.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/cloudflare-cache-purge/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cloudflare-cache-purge.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/cloudflare-cache-purge/"
+            "time": "2017-04-24 06:37:16"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.4.2",
+            "version": "4.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.4.2"
+                "reference": "tags/4.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -180,15 +154,15 @@
         },
         {
             "name": "wpackagist-plugin/googleanalytics",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/googleanalytics/",
-                "reference": "trunk"
+                "reference": "tags/1.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/googleanalytics.zip",
+                "url": "https://downloads.wordpress.org/plugin/googleanalytics.1.0.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -200,15 +174,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "4.0.3",
+            "version": "4.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/4.0.3"
+                "reference": "tags/4.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.4.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.4.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -220,15 +194,15 @@
         },
         {
             "name": "wpackagist-plugin/recent-facebook-posts",
-            "version": "2.0.8",
+            "version": "2.0.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/recent-facebook-posts/",
-                "reference": "tags/2.0.8"
+                "reference": "tags/2.0.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/recent-facebook-posts.2.0.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/recent-facebook-posts.2.0.11.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -240,15 +214,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.4.4",
+            "version": "2.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.4.4"
+                "reference": "tags/2.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -260,7 +234,7 @@
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
-            "version": "1.8.1",
+            "version": "1.11.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
@@ -268,7 +242,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip",
+                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip?timestamp=1495021825",
                 "reference": null,
                 "shasum": null
             },
@@ -280,15 +254,15 @@
         },
         {
             "name": "wpackagist-plugin/sermon-manager-for-wordpress",
-            "version": "1.9.6",
+            "version": "2.4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/sermon-manager-for-wordpress/",
-                "reference": "tags/1.9.6"
+                "reference": "tags/2.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sermon-manager-for-wordpress.1.9.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/sermon-manager-for-wordpress.2.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -300,15 +274,15 @@
         },
         {
             "name": "wpackagist-plugin/simplemap",
-            "version": "2.4.8",
+            "version": "2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/simplemap/",
-                "reference": "tags/2.4.8"
+                "reference": "tags/2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simplemap.2.4.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/simplemap.2.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -320,15 +294,15 @@
         },
         {
             "name": "wpackagist-plugin/vaultpress",
-            "version": "1.8.2",
+            "version": "1.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/vaultpress/",
-                "reference": "tags/1.8.2"
+                "reference": "tags/1.9.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/vaultpress.1.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/vaultpress.1.9.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -340,15 +314,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.2.5",
+            "version": "3.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.2.5"
+                "reference": "tags/3.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.9.zip",
                 "reference": null,
                 "shasum": null
             },
