@@ -6,6 +6,7 @@
         "hhvm": "~3.2",
         "WordPress/WordPress": "*",
         "wpackagist-plugin/recent-facebook-posts": "~2",
+        "wpackagist-plugin/simple-feed-stats": "20170801", 
         "wpackagist-plugin/sermon-manager-for-wordpress": "~2",
         "wpackagist-plugin/contact-form-7": "~4",
         "wpackagist-plugin/redirection": "~2",

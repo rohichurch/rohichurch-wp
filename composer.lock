@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f2cab2950936cec2f3e790b605d1297",
-    "content-hash": "522850da541710ea8ca4a5686815b13b",
+    "hash": "7b14c579f34411db30e70bea02a8b821",
+    "content-hash": "513438d8b85dbf79c92e0b01f850f39a",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -134,15 +134,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.8",
+            "version": "4.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.8"
+                "reference": "tags/4.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.8.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -214,15 +214,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.6.2",
+            "version": "2.6.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.6.2"
+                "reference": "tags/2.6.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -234,7 +234,7 @@
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
-            "version": "1.11.3",
+            "version": "1.11.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
@@ -242,7 +242,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip?timestamp=1495021825",
+                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip?timestamp=1501496607",
                 "reference": null,
                 "shasum": null
             },
@@ -254,15 +254,15 @@
         },
         {
             "name": "wpackagist-plugin/sermon-manager-for-wordpress",
-            "version": "2.4.2",
+            "version": "2.4.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/sermon-manager-for-wordpress/",
-                "reference": "tags/2.4.2"
+                "reference": "tags/2.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sermon-manager-for-wordpress.2.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/sermon-manager-for-wordpress.2.4.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -271,6 +271,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/sermon-manager-for-wordpress/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-feed-stats",
+            "version": 20170801,
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-feed-stats/",
+                "reference": "tags/20170801"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-feed-stats.20170801.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-feed-stats/"
         },
         {
             "name": "wpackagist-plugin/simplemap",
@@ -294,15 +314,15 @@
         },
         {
             "name": "wpackagist-plugin/vaultpress",
-            "version": "1.9.0",
+            "version": "1.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/vaultpress/",
-                "reference": "tags/1.9.0"
+                "reference": "tags/1.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/vaultpress.1.9.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/vaultpress.1.9.2.zip",
                 "reference": null,
                 "shasum": null
             },
