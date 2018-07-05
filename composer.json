@@ -16,7 +16,9 @@
         "wpackagist-plugin/wpro": "~1",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
         "wpackagist-plugin/wordpress-seo": "~3",
-        "wpackagist-plugin/vaultpress": "~1"
+        "wpackagist-plugin/vaultpress": "~1",
+        "wpackagist-plugin/mailchimp-forms-by-mailmunch":"3.1.1"
+        
     },
     "repositories": [
         {
