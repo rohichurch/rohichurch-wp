@@ -1,11 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "7b14c579f34411db30e70bea02a8b821",
-    "content-hash": "513438d8b85dbf79c92e0b01f850f39a",
+    "content-hash": "8389e3d31c0653b57ba063b7be0f1f9f",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -20,16 +19,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.3.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
+                "reference": "049797d727261bf27f2690430d935067710049c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
-                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
+                "reference": "049797d727261bf27f2690430d935067710049c2",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +40,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.8.36"
             },
             "type": "composer-plugin",
             "extra": {
@@ -75,6 +74,7 @@
                 "Hurad",
                 "ImageCMS",
                 "Kanboard",
+                "Lan Management System",
                 "MODX Evo",
                 "Mautic",
                 "Maya",
@@ -98,6 +98,7 @@
                 "croogo",
                 "dokuwiki",
                 "drupal",
+                "eZ Platform",
                 "elgg",
                 "expressionengine",
                 "fuelphp",
@@ -110,14 +111,18 @@
                 "lavalite",
                 "lithium",
                 "magento",
+                "majima",
                 "mako",
                 "mediawiki",
                 "modulework",
+                "modx",
                 "moodle",
+                "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
                 "puppet",
+                "pxcms",
                 "reindex",
                 "roundcube",
                 "shopware",
@@ -130,19 +135,19 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-04-24 06:37:16"
+            "time": "2017-12-29T09:13:20+00:00"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.8.1",
+            "version": "4.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.8.1"
+                "reference": "tags/4.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.8.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.9.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -193,16 +198,36 @@
             "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
-            "name": "wpackagist-plugin/recent-facebook-posts",
-            "version": "2.0.11",
+            "name": "wpackagist-plugin/mailchimp-forms-by-mailmunch",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/recent-facebook-posts/",
-                "reference": "tags/2.0.11"
+                "url": "https://plugins.svn.wordpress.org/mailchimp-forms-by-mailmunch/",
+                "reference": "tags/3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/recent-facebook-posts.2.0.11.zip",
+                "url": "https://downloads.wordpress.org/plugin/mailchimp-forms-by-mailmunch.3.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/mailchimp-forms-by-mailmunch/"
+        },
+        {
+            "name": "wpackagist-plugin/recent-facebook-posts",
+            "version": "2.0.13",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/recent-facebook-posts/",
+                "reference": "tags/2.0.13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/recent-facebook-posts.2.0.13.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -214,15 +239,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.6.6",
+            "version": "2.10.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.6.6"
+                "reference": "tags/2.10.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.10.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -234,15 +259,15 @@
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
-            "version": "1.11.6",
+            "version": "1.11.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
-                "reference": "trunk"
+                "reference": "tags/1.11.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip?timestamp=1501496607",
+                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.1.11.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -254,15 +279,15 @@
         },
         {
             "name": "wpackagist-plugin/sermon-manager-for-wordpress",
-            "version": "2.4.5",
+            "version": "2.13.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/sermon-manager-for-wordpress/",
-                "reference": "tags/2.4.5"
+                "reference": "tags/2.13.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sermon-manager-for-wordpress.2.4.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/sermon-manager-for-wordpress.2.13.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -314,15 +339,15 @@
         },
         {
             "name": "wpackagist-plugin/vaultpress",
-            "version": "1.9.2",
+            "version": "1.9.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/vaultpress/",
-                "reference": "tags/1.9.2"
+                "reference": "tags/1.9.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/vaultpress.1.9.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/vaultpress.1.9.5.zip",
                 "reference": null,
                 "shasum": null
             },
