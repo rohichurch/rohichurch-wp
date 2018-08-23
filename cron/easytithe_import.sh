@@ -1,4 +1,4 @@
-#!/bin/bash
+PYBREEZECHMS_GIT_REPOSITORY#!/bin/bash
 
 # Script for importing contributions from EasyTithe to BreezeChMS.
 # Logs into EasyTithe and imports contributions into BreezeChMS using
@@ -6,7 +6,13 @@
 
 set -e
 
-YESTERDAY_DATE=$(date +%m/%d/%Y -d "yesterday")
+EASYTITHE_USERNAME=${EASYTITHE_USERNAME?"Need to set EASYTITHE_USERNAME"}
+EASYTITHE_PASSWORD=${EASYTITHE_PASSWORD?"Need to set EASYTITHE_PASSWORD"}
+BREEZE_API_KEY=${BREEZE_API_KEY?"Need to set BREEZE_API_KEY"}
+BREEZE_API_URL=${BREEZE_API_URL?"Need to set BREEZE_API_URL"}
+PYBREEZECHMS_GIT_REPOSITORY=${PYBREEZECHMS_GIT_REPOSITORY:="https://github.com/alexortizrosado/pyBreezeChMS.git"}
+
+YESTERDAY_DATE=$([ `uname` == "Darwin" ] && date -v-1d +%m/%d/%Y || date +%m/%d/%Y -d "yesterday")
 EASYTITHE_IMPORT_TMP_DIR=/tmp/$$.easytithe_import
 PYTHON_BIN=$(which python)
 PIP_BIN=pip
@@ -15,7 +21,7 @@ function clean_up() {
     echo "Cleaning up directory: ${EASYTITHE_IMPORT_TMP_DIR}"
     if [[ -d "$EASYTITHE_IMPORT_TMP_DIR" ]]
     then
-        rm -rf "$EASYTITHE_IMPORT_TMP_DIR"
+        echo "rm -rf $EASYTITHE_IMPORT_TMP_DIR"
     fi
 }
 
@@ -35,8 +41,8 @@ function setup_environment() {
   fi
 
   # Clone pyBreezeChMS repository to temp directory.
-  echo "Cloning https://github.com/alexortizrosado/pyBreezeChMS.git ..."
-  /usr/bin/git clone https://github.com/alexortizrosado/pyBreezeChMS.git $working_dir
+  echo "Cloning ${PYBREEZECHMS_GIT_REPOSITORY} ..."
+  /usr/bin/git clone ${PYBREEZECHMS_GIT_REPOSITORY} $working_dir
 
   # Install dependencies.
   echo "Installing dependencies..."
@@ -56,6 +62,7 @@ cd $EASYTITHE_IMPORT_TMP_DIR/samples/
 
 echo "Running easytithe_importer..."
 $PYTHON_BIN easytithe_importer.py \
+    --dry_run \
     --username $EASYTITHE_USERNAME \
     --password $EASYTITHE_PASSWORD \
     --breeze_api_key $BREEZE_API_KEY \
