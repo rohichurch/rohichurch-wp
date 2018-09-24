@@ -1,4 +1,4 @@
-PYBREEZECHMS_GIT_REPOSITORY#!/bin/bash
+#!/bin/bash
 
 # Script for importing contributions from EasyTithe to BreezeChMS.
 # Logs into EasyTithe and imports contributions into BreezeChMS using
@@ -62,7 +62,6 @@ cd $EASYTITHE_IMPORT_TMP_DIR/samples/
 
 echo "Running easytithe_importer..."
 $PYTHON_BIN easytithe_importer.py \
-    --dry_run \
     --username $EASYTITHE_USERNAME \
     --password $EASYTITHE_PASSWORD \
     --breeze_api_key $BREEZE_API_KEY \
