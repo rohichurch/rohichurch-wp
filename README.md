@@ -3,194 +3,154 @@ Heroku WP
 
 This is a template for installing and running [WordPress](http://wordpress.org/) on [Heroku](http://www.heroku.com/) with a focus on speed and security while using the official Heroku stack.
 
-The repository is built on top of the following technologies.
-* [nginx](http://nginx.org) - For serving web content.
-* [HHVM](http://hhvm.com) - A virtual machine designed to serve Hack and PHP.
-* [MySQL](http://www.mysql.com) - Provided by the ClearDB add-on.
-* [Memcached](http://memcached.org) - Provided by the MemCachier add-on.
+Spin Up a Demo
+--------------
+
+Want to give it a try first? Deploy a demo to your account:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/xyu/heroku-wp/tree/button)
+
+_For production setups it's highly recommended to follow the instructions below to properly install and version control with your own repo._
+
+About
+-----
+
+The repository is built on top of the standard Heroku PHP buildpack so you don't need to trust some sketchy 3rd party s3 bucket.
+* [NGINX](http://nginx.org) - Fast scalable webserver.
+* [PHP 7](http://php.net) - Latest and greatest with performance on par with HHVM.
 * [Composer](https://getcomposer.org) - A dependency manager to make installing and managing plugins easier.
 
-In additon repository comes bundled with the following plugins.
-* [SASL object cache](https://github.com/xyu/SASL-object-cache) - For running with MemCachier add-on
-* [Batcache](http://wordpress.org/plugins/batcache/) - For full page output caching
-* [SSL Domain Alias](http://wordpress.stackexchange.com/questions/38902) - For sending SSLed traffic to a different domain (needed to send WP admin traffic to Heroku over SSL directly.)
-* [Authy Two Factor Auth](https://www.authy.com/products/wordpress)
+Heroku WP uses the following addons:
+* [MariaDB](https://mariadb.org) / [jawsdb-maria](https://elements.heroku.com/addons/jawsdb-maria) - A binary compatible MySQL replacement with even better performance.
+* [Redis](http://redis.io) / [heroku-redis](https://elements.heroku.com/addons/heroku-redis) - An in-memory datastore for fast persistant object cache.
+* [New Relic](https://newrelic.com) / [newrelic](https://elements.heroku.com/addons/newrelic) - SaaS application performance monitoring.
+
+And optionally the following addons:
+* [SendGrid](https://sendgrid.com) / [sendgrid](https://elements.heroku.com/addons/sendgrid) - SaaS email delivery service.
+* [IronWorker](https://www.iron.io) / [iron_worker](https://elements.heroku.com/addons/iron_worker) - SaaS external jobs queue
+
+In additon repository comes bundled with the following tools and must use plugins.
+* [WP-CLI](http://wp-cli.org) - For simple management of your WP install.
+* [Batcache](http://wordpress.org/plugins/batcache) - For full page output caching.
+* [Redis Object Cache](http://wordpress.org/plugins/redis-cache) - For using Redis as a persistant, shared, object cache.
+* [Secure DB Connection](http://wordpress.org/plugins/secure-db-connection) - For ensuring connections to the database are secure and encrypted.
+
+Finally these plugins are pre-installed as they are highly recommended but not activated.
 * [Jetpack](http://jetpack.me/)
+* [S3 Uploads](https://github.com/humanmade/S3-Uploads)
 * [SendGrid](http://wordpress.org/plugins/sendgrid-email-delivery-simplified/)
-* [WP Read-Only](http://wordpress.org/extend/plugins/wpro/)
 
 WordPress and most included plugins are installed by Composer on build. To add new plugins or upgrade versions of plugins simply update the `composer.json` file and then generate the `composer.lock` file with the following command locally:
 
 ```bash
-$ composer update --ignore-platform-reqs
+$ bin/composer update --ignore-platform-reqs
 ```
 
-To customize the site simply place files into `/public` which upon deploy to Heroku will be copied on top of the standard WordPress install and plugins specified by Composer.
+To add local plugins and themes, you can create ```plugins/``` and ```themes/``` folders inside `/public/wp-content` which upon deploy to Heroku will be copied on top of the standard WordPress install, themes, and plugins specified by Composer.
 
 Installation
 ------------
 
+Make sure you have the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed and configured for your account. This provides the `heroku` CLI tool for creating and managing your Heroku apps.
+
 Clone the repository from Github
 
-    $ git clone git://github.com/xyu/heroku-wp.git
+    $ git clone https://github.com/xyu/heroku-wp.git
 
-With the [Heroku gem](http://devcenter.heroku.com/articles/heroku-command), create your app
+Run the included init script
 
-    $ cd heroku-wp
-    $ heroku create
-    > Creating strange-turtle-1234... done, stack is cedar
-    > http://strange-turtle-1234.herokuapp.com/ | git@heroku.com:strange-turtle-1234.git
-    > Git remote heroku added
+    $ cd heroku-wp && bin/init.sh my-app-name
 
+Use WP-CLI to install the DB and set intial settings
 
-Add a database to your app
-
-    $ heroku addons:create cleardb:ignite
-    > Adding cleardb:ignite on strange-turtle-1234... done, v2 (free)
-    > Use `heroku addons:docs cleardb:ignite` to view documentation.
-
-Add memcache to your app
-
-    $ heroku addons:create memcachier:dev
-    > Adding memcachier:dev on strange-turtle-1234... done, v3 (free)
-    > MemCachier: added.  Your credentials may take up to 3 minutes to sync to our servers.
-    > Use `heroku addons:docs memcachier:dev` to view documentation.
-
-Add unique keys and salts to your Heroku config
-
-    $ heroku config:set\
-        WP_AUTH_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
-        WP_SECURE_AUTH_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
-        WP_LOGGED_IN_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
-        WP_NONCE_KEY="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
-        WP_AUTH_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
-        WP_SECURE_AUTH_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
-        WP_LOGGED_IN_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"\
-        WP_NONCE_SALT="`dd if=/dev/random bs=1 count=96 2>/dev/null | base64`"
-    > Setting config vars and restarting strange-turtle-1234... done, v4
-    > WP_AUTH_KEY:         ...
-    > WP_AUTH_SALT:        ...
-    > WP_LOGGED_IN_KEY:    ...
-    > WP_LOGGED_IN_SALT:   ...
-    > WP_NONCE_KEY:        ...
-    > WP_NONCE_SALT:       ...
-    > WP_SECURE_AUTH_KEY:  ...
-    > WP_SECURE_AUTH_SALT: ...
-
-Create a new production branch for your app
-
-    $ git checkout -b production
-
-Deploy to Heroku
-
-    $ git push heroku production:master
-    > Fetching repository, done.
-    > Counting objects: 5, done.
-    > Delta compression using up to 8 threads.
-    > Compressing objects: 100% (3/3), done.
-    > Writing objects: 100% (3/3), 650 bytes | 0 bytes/s, done.
-    > Total 3 (delta 2), reused 0 (delta 0)
-    >
-    > -----> PHP app detected
-    > -----> Detected request for HHVM 3.1.0 in composer.json.
-    > -----> Setting up runtime environment...
-    >        - HHVM 3.1.0
-    >        - Apache 2.4.9
-    >        - Nginx 1.4.6
-    > -----> Installing dependencies...
-    >        Composer version 1d8b627b57a5a0fe8ceaef25534d9da8bd7cb301 2014-06-28 18:45:20
-    >        Loading composer repositories with package information
-    >        Installing dependencies from lock file
-    >          - Installing fancyguy/webroot-installer (1.1.0)
-    >            Loading from cache
-    >
-    >          - Installing composer/installers (v1.0.14)
-    >            Loading from cache
-    >
-    >          - Installing wordpress/wordpress (3.9.1)
-    >            Loading from cache
-    >
-    >          - Installing wpackagist-plugin/authy-two-factor-authentication (2.5.4)
-    >            Loading from cache
-    >
-    >          - Installing wpackagist-plugin/jetpack (3.0.2)
-    >            Loading from cache
-    >
-    >          - Installing wpackagist-plugin/sendgrid-email-delivery-simplified (1.3.2)
-    >            Loading from cache
-    >
-    >          - Installing wpackagist-plugin/wpro (1.0)
-    >            Loading from cache
-    >
-    >        Generating optimized autoload files
-    > -----> Building runtime environment...
-    > -----> Discovering process types
-    >        Procfile declares types -> web
-    >
-    > -----> Compressing... done, 61.1MB
-    > -----> Launching... done, v70
-    >        http://strange-turtle-1234.herokuapp.com/ deployed to Heroku
-    >
-    > To git@heroku:strange-turtle-1234.git
-    > * [new branch]    production -> master
-
-After deployment WordPress has a few more steps to setup and thats it!
+    $ heroku run wp core install \
+        --url=my-app-name.herokuapp.com \
+        --title="WordPress on Heroku" \
+        --admin_user="admin" \
+        --admin_password="correct-horse-battery-staple" \
+        --admin_email="info@example.com"
 
 Optional Installation
 ---------------------
 
 Installing and configuring the items below are not essential to get a working WordPress install but will make your site more functional and secure.
 
-### Securing Your Admin Dashboard
+### Sending Email
 
-Heroku provides an SSL'ed endpoint to each app for free via the APP_NAME.herokuapp.com domain. To use this domain for all logged in sessions and to protect your login credentials simply set the SSL domain in the config vars. (Replace APP_NAME with the name of your Heroku app.)
+[SendGrid](http://wordpress.org/plugins/sendgrid-email-delivery-simplified) plugin is included in the repository and preconfigured to work with the [SendGrid addon](https://elements.heroku.com/addons/sendgrid). It has recently been updated, and support for *Username & Password* authentication has been dropped. It now requires an API key.
 
-    $ heroku config:set SSL_DOMAIN="APP_NAME.herokuapp.com"
+To activate this plugin, just run the included init script and follow the instructions.
 
-### Securing Your MySQL Connection
-
-By default WordPress will connect to the database unencrypted which is a potential problem for a cloud based installs where the database and application servers may transfer data over unsecured connections. ClearDB provides SSL keys and certs for the database that's setup and it's highly advisable to use them to secure your database connection.
-
-1. Go to your [Heroku Dashboard](https://dashboard.heroku.com/) and click on your heroku-wp app.
-2. Click on the "ClearDB MySQL Database" add-on.
-3. Scroll to the bottom of the page and download the "ClearDB CA Certificate", "Client Certificate", and "Client Private Key" in the "PEM Format".
-4. Generate Heroku compatible RSA keys from the key file downloaded:
-
-    ```
-    $ openssl rsa -in cleardb_id-key.pem -out cleardb_id-key.rsa.pem
-    ```
-
-5. Add the keys to the config vars of your app:
-
-    ```
-    $ heroku config:set \
-        CLEARDB_SSL_CA="$(cat /path/to/cleardb-ca.pem)" \
-        CLEARDB_SSL_CERT="$(cat /path/to/cleardb_id-cert.pem)" \
-        CLEARDB_SSL_KEY="$(cat /path/to/cleardb_id-key.rsa.pem)"
-    > Setting config vars and restarting strange-turtle-1234... done, v12
-    > CLEARDB_SSL_CA:   ...
-    > CLEARDB_SSL_CERT: ...
-    > CLEARDB_SSL_KEY:  ...
-    ```
+    $ bin/init-sendgrid.sh my-app-name
 
 ### Media Uploads
 
-[WP Read-Only](http://wordpress.org/extend/plugins/wpro/) plugin is included in the repository allowing the use of [S3](http://aws.amazon.com/s3/) for media uploads.
+[S3 Uploads](https://github.com/humanmade/S3-Uploads) is a lightweight "drop-in" for storing WordPress uploads on [Amazon S3](http://aws.amazon.com/s3) instead of the local filesystem. If you want media uploads you must activate this plugin and configure a S3 bucket because the local filesystem for Heroku Dynos are ephemeral.
 
-1. Activate the plugin under 'Plugins', if not already activated.
-2. Input your Amazon S3 credentials in 'Settings'->'WPRO Settings'.
+To activate this plugin:
 
-### Sending Email
+1.  First set your S3 credentials via Heroku configs with AWS S3 path-style URLs. It's best practices to URL encode your AWS key and secret, (e.g. use `%2B` for `+` and `%2F` for `/`,) however non URL encoded values should still work even if they are invalid URLs.
 
-[SendGrid](http://wordpress.org/plugins/sendgrid-email-delivery-simplified/) plugin is included in the repository allowing the use of [SendGrid](https://addons.heroku.com/sendgrid/) for emails.
+    ```
+    $ heroku config:set \
+        AWS_S3_URL="s3://{AWS_KEY}:{AWS_SECRET}@s3.amazonaws.com/{AWS_BUCKET}"
+    ```
 
-Add SendGrid to your app
+    If you would like to set the optional region for your S3 bucket use the region-specific endpoint.
 
-    $ heroku addons:create sendgrid:starter
-    > Adding sendgrid:starter on strange-turtle-1234... done, v11 (free)
-    > Use `heroku addons:docs sendgrid:starter` to view documentation.
+    ```
+    $ heroku config:set \
+        AWS_S3_URL="s3://{AWS_KEY}:{AWS_SECRET}@s3-{AWS_REGION}.amazonaws.com/{AWS_BUCKET}"
+    ```
 
-Activate the plugin
+    For example, if your bucket is in the South America (São Paulo) region use:
+
+    ```
+    $ heroku config:set \
+        AWS_S3_URL="s3://my-key:my-secret@s3-sa-east-1.amazonaws.com/my-bucket"
+    ```
+
+    If you would like to use a custom bucket URL either because you are proxying the requests or if you are using a domain for the bucket name you can do so by setting a custom url param:
+
+    ```
+    $ heroku config:set \
+        AWS_S3_URL="s3://{AWS_KEY}:{AWS_SECRET}@s3-{AWS_REGION}.amazonaws.com/{AWS_BUCKET}?url={BUCKET_URL}"
+    ```
+
+    The `BUCKET_URL` should have a scheme attached, e.g.:
+
+    ```
+    $ heroku config:set \
+        AWS_S3_URL="s3://my-key:my-secret@s3-sa-east-1.amazonaws.com/my-bucket?url=https://static.example.com"
+    ```
+
+2.  Then activate the plugin in WP Admin.
+
+### Securing Your MySQL Connection (X509 auth or custom CAs only)
+
+This repo already comes with both the ClearDB and Amazon RDS root CAs installed for secure DB connections. To turn on SSL simply set the `WP_DB_SSL` config. (We default to secured so this is already set to `ON` by `init.sh`.)
+
+    $ heroku config:set \
+        WP_DB_SSL="ON"
+
+If you use another MySQL database and have a self signed cert you can add the self signed CA to the trusted store by committing it to `/support/mysql-certs` and setting the filenames or explicitly setting it in the ENV config itself:
+
+    $ heroku config:set \
+        MYSQL_SSL_CA="$(cat /path/to/server-ca.pem)"
+
+In addition if your MySQL server requires X509 auth in addition to the username/password you can set the client cert and private key through the use of ENV vars like so (be sure to use RSA keys):
+
+    $ heroku config:set \
+        MYSQL_SSL_CERT="$(cat /path/to/client-cert.pem)" \
+        MYSQL_SSL_KEY="$(cat /path/to/client-key.pem)"
+
+### Offloaded WP Cron
+
+WP Cron relies on visitors to the site to trigger scheduled jobs to run which can be a problem for lightly trafficked sites. Instead we can have an external jobs system (IronWorker) run WP Cron on schedule to provide consistency.
+
+Just run the included init script to install an IronWorker task with an execution schedule of every 15 minutes.
+
+    $ bin/init-ironworker.sh my-app-name
 
 Usage
 -----
@@ -209,17 +169,15 @@ Updating
 Updating your WordPress version is just a matter of merging the updates into
 the branch created from the installation.
 
-    $ git pull # Get the latest
+    $ git pull                                    # Get the latest updates
+    $ git checkout {SLUG}                         # Checkout the site branch
+    $ git merge origin/master                     # Merge in latest
+    $ bin/composer update --ignore-platform-reqs  # Update composer.lock file
+    $ git push heroku {SLUG}:master               # Deploy to Heroku
 
-Using the same branch name from our installation:
+After pushing changes update the WordPress database via WP-CLI:
 
-    $ git checkout production
-    $ git merge master # Merge latest
-    $ git push heroku production:master
-
-WordPress needs to update the database. After push, navigate to:
-
-    http://your-app-url.herokuapp.com/wp-admin
+    $ heroku run wp core update-db
 
 WordPress will prompt for updating the database. After that you'll be good
 to go.
@@ -232,18 +190,42 @@ Heroku allows you to add custom domains to your site hosted with them.  To add y
     $ heroku domains:add www.example.com
     > Added www.example.com as a custom domain name to myapp.heroku.com
 
+FAQ
+---
+
+#### Q. Help, nothing is showing up / I've polluted my cache!
+
+One of the most common problems is if you make a DB change but still have stale cache refering to the old configs the easiest way to fix this is to use the included WP-CLI tool to flush your Redis cache:
+
+    $ heroku run wp cache flush
+
+#### Q. Why are you hacking Batcache?
+
+PHP 7 support for Batcache has been merged into master however a new version has not been tagged yet. Also some bug fixes that help make sure caching headers are valid have not been merged in yet. Finally, displaying caching information in HTTP headers is a lot easier then HTML comments however it's a rather large change so I'm forking the plugin for now.
+
+As with all external code you should trust but verify, here's the diff for the forked version against Automattic's head:
+
+https://github.com/Automattic/batcache/compare/master...xyu:master
+
 Running Locally
 ---------------
 
 A Vagrant instance to run Heroku WP is included. To get up and running:
-* Install vagrant http://www.vagrantup.com/downloads
-* Install virtual box https://www.virtualbox.org/wiki/Downloads 
-* Install virtual box extension pack https://www.virtualbox.org/wiki/Downloads 
-* `cd` into app root directory and run `$ vagrant up` (should start setting up virtual env. go grab some ☕, takes about 10 minutes)
+* Install Vagrant http://www.vagrantup.com/downloads
+* Install VirtualBox https://www.virtualbox.org/wiki/Downloads
 
-Once Vagrant provisions the VM you will have Heroku WP running locally at `http://herokuwp.local/`. On first load, it should bring you to the wordpress install page. If the site is not accessible in the browser, you might need to add `192.168.50.100  herokuwp.local` to your hosts file.
+To make your life easier a Vagrant plugin can be used to manage the hosts file.
 
-As a convenience both the `/public` dir and `/composer.lock` file will be monitored by the VM. Any changes to either triggers a rebuild process which will result in `/public.built` (the web root) being updated.
+    $ vagrant plugin install vagrant-hostmanager
+
+If you don't have vagrant-hostmanager installed you'll have to manually update
+your hostfile.
+
+Once installed `cd` into app root directory and run `$ vagrant up` (should start setting up virtual env. go grab some ☕, takes about 10 minutes)
+
+Once Vagrant provisions the VM you will have Heroku WP running locally at `http://herokuwp.local/`. On first load, it should bring you to the WordPress install page. If the site is not accessible in the browser, you might need to add `192.168.50.100 herokuwp.local` to your hosts file manually.
+
+As a convenience both the `/public` dir and `/composer.lock` file will be monitored by the VM. Any changes to either triggers a rebuild process which will result in `/public.built` (the web root) being updated. `/app/support` is also monitored by the VM, changes here will cause Nginx to reload with the new configs.
 
 Connecting to MySQL on Vagrant Machine
 --------------------------------------
@@ -253,17 +235,18 @@ In order to connect you will need to change the MySQL config to work with 0.0.0.
 * Open the config file `$ sudo vim /etc/mysql/my.cnf`
 * Change the IP address from 127.0.0.1 to 0.0.0.0
 
-Then you can connect using SSH with the following paramaters:
+Then you can connect using SSH with the following parameters:
 * SSH hostname: 127.0.0.1:2222
 * SSH username: vagrant
 * SSH password: vagrant
 * MySQL hostname: 127.0.0.1
 * MySQL port: 3306
-* mysql user: root
+* mysql user: herokuwp
 * mysql password: password
 
 If your computer goes to sleep and vagrant is suspended abruptly
 ----------------
 
-Sometimes after `vagrant up` from a aborted state, the vm does not start correctly and the site is not accessible. 
-* Provision the machine `vagrant provision` to force it to start back up again
+Sometimes after `vagrant up` from an aborted state, the vm does not start correctly and the site is not accessible. When this happens force a re-provision of the machine with
+
+    $ vagrant provision
